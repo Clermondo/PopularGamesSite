@@ -1,4 +1,132 @@
-.gameImages {
+/* .gameImages {
   width: 800px;
   height: 440px;
+} */
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+/*typography
+=================*/
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5em;
+}
+
+.title span{
+  font-weight: 300;
+  display: block;
+  font-size:.9em;
+}
+
+@media(min-width: 60rem){
+  .title{
+    font-size: 3.5rem;
+  }
+
+  .logo{
+    float:left;
+    margin-top: .1em;
+  }
+
+  nav{
+    float: right;
+  }
+}
+
+/* buttons */
+
+.button{
+  display: inline-block;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-width: 2px;
+  border-style: solid;
+  padding: .5em 1.5em;
+}
+
+.button-accent{
+  color: #00ff6c;
+  border-color: #00ff6c;
+}
+
+.button-accent:hover,
+.button-accent:focus {
+  background: #00ff6c;
+  color: #232323;
+}
+
+/* Header
+================*/
+
+header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 1em;
+}
+
+.logo{
+  color: white;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin: 1em;
+}
+
+nav a {
+  font-weight: 900;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: .7em;
+  color: #FFF;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #DDD;
+}
+
+/*home-hero
+====================*/
+
+.home-hero {
+  background-image: url(images/bo4.jpg);
+  padding: 10em 0;
+  color: #FFF;
+}
+
+@media (min-width: 60rem) {
+  .home-hero{
+    height: 100vh;
+    padding-top: 35vh;
+  }
 }
