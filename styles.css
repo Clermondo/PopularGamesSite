@@ -21,14 +21,69 @@ img {
 
 .container {
   width: 95%;
+  max-width: 70em;
   margin: 0 auto;
+}
+
+.clearfix::after,
+section::after,
+footer::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* Column System
+============== */
+
+[class^=col-]{
+  float: left;
+  padding: 0 .5em;
+  width: 100%;
+}
+
+[class^=col-]:first-child{
+  float: left;
+  padding-left: 0;
+}
+
+[class^=col-]:last-child{
+  float: left;
+  padding-right: 0;
+}
+
+@media(){
+.col-3{
+  width: 50%;
+  }
+
+.col-1{
+  width: 16.666%;
+  }
 }
 
 /*typography
 =================*/
 
+h1{
+  font-weight: 300;
+  font-size: 1.7rem;
+  margin-top: 0;
+}
+
+p{
+  margin-top: 0;
+  line-height: 1.5;
+}
+
+p:last-of-type{
+  margin-bottom: 0;
+}
+
 .title {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 1000;
+  margin-top: 1em;
   margin-bottom: 1.5em;
 }
 
@@ -38,9 +93,25 @@ img {
   font-size:.9em;
 }
 
+.title-cta{
+  margin: .5em;
+}
+
+.unstyled-list{
+  margin: 0;
+  padding:0;
+  list-style-type: none;
+}
+
 @media(min-width: 60rem){
+
+  p{
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
   .title{
-    font-size: 3.5rem;
+    font-size: 3.7rem;
   }
 
   .logo{
@@ -65,6 +136,16 @@ img {
   padding: .5em 1.5em;
 }
 
+@media (min-width: 60rem) {
+  .button{
+    font-size: 1.5rem;
+  }
+}
+
+.button-small{
+  font-size: 1rem;
+}
+
 .button-accent{
   color: #00ff6c;
   border-color: #00ff6c;
@@ -74,6 +155,17 @@ img {
 .button-accent:focus {
   background: #00ff6c;
   color: #232323;
+}
+
+.button-dark{
+  color: #232323;
+  border-color: #232323;
+}
+
+.button-dark:hover,
+.button-dark:focus {
+  background: #232323;
+  color: #00ff6c;
 }
 
 /* Header
@@ -91,7 +183,7 @@ header {
 }
 
 nav ul {
-  margin: 0;
+  margin: -.5em;
   padding: 0;
   list-style: none;
 }
@@ -119,14 +211,147 @@ nav a:focus {
 ====================*/
 
 .home-hero {
-  background-image: url(images/bo4.jpg);
+  background-image: url(images/Seats.jpg);
+  background-size: cover;
+  background-repeat:no-repeat;
   padding: 10em 0;
   color: #FFF;
 }
+
 
 @media (min-width: 60rem) {
   .home-hero{
     height: 100vh;
     padding-top: 35vh;
   }
+}
+
+/* hero-home */
+/* ================ */
+
+.home-about-textbox {
+  background-color: #232323;
+  padding: 4em;
+  width: 100vw;
+  margin-left: -2.5%;
+  outline: 2px solid #00ff6c;
+  outline-offset: -2.5em;
+  color: #FFF;
+  position: relative;
+}
+
+.home-about-textbox h1 {
+  color: #00ff6c;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: .75em;
+  background: #232323;
+  padding: 0 .145em;
+}
+
+@media (min-width: 25rem){
+  h1 {
+    font-size: 2rem;
+  }
+
+  .home-about-textbox h1{
+    top: .6em;
+    padding: 0 .325em;
+  }
+}
+
+@media (min-width: 60rem){
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-about{
+  background-image: url(images/bo4.jpg);
+  padding-bottom: 10em;
+  }
+
+  .home-about-textbox {
+    width:50%;
+    padding: 7em;
+    outline-offset: -3.75;
+    top: -5em;
+    margin-left: -2.5%;
+    text-align: left;
+    box-shadow: 0 0 3em 0 rgba(0,0,0,.3)
+  }
+
+  .home-about-textbox h1{
+    top: .75em;
+    left: 5rem;
+    transform: translateX(0);
+  }
+}
+
+/* portfolio
+================ */
+
+.portfolio {
+  margin: 3em 0;
+}
+
+.port-item {
+  margin: 0;
+  position: relative;
+}
+
+.port-item img {
+  display: block;
+}
+
+.port-desc{
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  background: rgba(0,0,0,.75);
+  padding-bottom: 2em;
+}
+
+@media (min-width: 50rem) {
+  .port-item {
+    width: 50%;
+    float: left;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 60rem) {
+  .port-item {
+    width: 33.3333334%;
+  }
+
+  .port-desc{
+    transform: translateY(150%);
+  }
+
+  .port-item:hover .port-desc{
+    transform: translateY(0%);
+  }
+}
+
+/* cta
+=============== */
+
+.cta {
+  background-color: #00ff6c;
+  padding: 6em 0;
+  color: white;
+}
+
+/* footer
+========== */
+
+footer {
+  background: #232323;
+  color: #fff;
+  text-align: left;
+  padding: 5em 0;
 }
