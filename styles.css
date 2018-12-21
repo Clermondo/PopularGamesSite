@@ -35,7 +35,7 @@ footer::after{
 
 /* Column System
 ============== */
-
+/*
 [class^=col-]{
   float: left;
   padding: 0 .5em;
@@ -48,9 +48,9 @@ footer::after{
 }
 
 [class^=col-]:last-child{
-  float: left;
+  float: right;
   padding-right: 0;
-}
+} */
 
 @media(){
 .col-3{
@@ -354,4 +354,8 @@ footer {
   color: #fff;
   text-align: left;
   padding: 5em 0;
+}
+
+.col-3{
+  margin-left: 2em;
 }
